@@ -1,0 +1,9 @@
+stages:
+- name: 制作镜像
+  steps:
+  - publishImageConfig:
+      dockerfilePath: ./Dockerfile
+      buildContext: .
+      tag: zhaoming23/mike-alpine/${CICD_GIT_BRANCH}:${CICD_EXECUTION_SEQUENCE}
+timeout: 60
+notification: {}
